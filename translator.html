@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/quicksand-x" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/fafers-technical" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/droid-sans-mono-2" rel="stylesheet">
+                
+    <link rel="stylesheet" href="translator.css">
+    <title>Translator</title>
+</head>
+<body>
+    <header>
+        <div>
+            <div>
+                <span class="material-icons">
+                    translate
+                    </span>
+            </div>
+            <p>Anne Translator</p>
+        </div>
+    </header>
+
+    <!-- Sections Starts -->
+    <section>
+        <div class="h1">
+            <h1>Translator</h1>
+
+        </div>
+        <article>
+            <div class="translateFrom">
+
+                Translate  From 
+                <select class="translateFromLang" onchange="translateFromLang()">
+                    <option value="en">English</option>
+                    <option value="ar">Arabic</option>
+                    <option value="zh">Chinese</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <option value="hi">Hindi</option>
+                    <option value="id">Indonesia</option>
+                    <option value="ga">Irish</option>
+                    <option value="it">Italian</option>
+                    <option value="ja">Japanese</option>
+                    <option value="ko">Korean</option>
+                    <option value="pi">Polish</option>
+                    <option value="pt">Portuguese</option>
+                    <option value="ru">Russian</option>
+                    <option value="es">Spanish</option>
+                    <option value="tr">Turkish</option>
+                    <option value="vi">Vitenamese</option>
+                    <option value="auto">Auto Detect (Experimental)</option>
+                </select>
+            </div>
+            <span class="material-icons swap">
+                swap_horiz
+                </span>
+            <div class="translateTo">
+                Translate To 
+
+                <select class="translateToLang" onchange="translateToLang()" >
+                    <option value="en">English</option>
+                    <option value="ar">Arabic</option>
+                    <option value="zh">Chinese</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <option value="hi">Hindi</option>
+                    <option value="id">Indonesia</option>
+                    <option value="ga">Irish</option>
+                    <option value="it">Italian</option>
+                    <option value="ja">Japanese</option>
+                    <option value="ko">Korean</option>
+                    <option value="pi">Polish</option>
+                    <option value="pt">Portuguese</option>
+                    <option value="ru">Russian</option>
+                    <option value="es">Spanish</option>
+                    <option value="tr">Turkish</option>
+                    <option value="vi">Vitenamese</option>
+                    <option value="auto">Auto Detect (Experimental)</option>
+                </select>
+            </div>
+            <div class="text">
+                <textarea oninput="getFromValue()"; class="from-text-value" autofocus></textarea>
+                <textarea class="to-text-value"></textarea>
+            </div>    
+            <button onclick="main()">Translate</button>
+        </article>
+    </section>
+
+    <script>
+        let displayTranlateValue = document.querySelector('.to-text-value')
+        // let translateToLang = document.querySelector('.translateToLang');
+        let fromTextValue = document.querySelector('.from-text-value');
+        
+        let translateFromLang = () => {
+            let translateFromLang = document.querySelector('.translateFromLang').value;
+            return translateFromLang;
+
+        }
+
+
+        const getFromValue = () => {
+            let fromTextValue = document.querySelector('.from-text-value').value;
+            return fromTextValue;
+        }
+
+        let translateToLang = () => {
+            let toTextValue = document.querySelector('.translateToLang').value;
+            return toTextValue;
+        }
+       
+
+
+        //creating a function to take the value from the Translate from options and passing it to the getData function
+
+        //creating a function to take the value from the Translate To options and passing it to the getData function
+        let toLang = () => {
+            let translateToLang = document.querySelector('.translateToLang').value;
+            console.log('translateToLang:', translateToLang)
+
+        }
+
+        //Adding the event to select the options from the Translate To
+        // translateToLang.addEventListener('change', toLang)
+        
+         
+ 
+
+        //Function to fetch the data and translate the input value
+        let getData = async (value,from,to) => {
+        console.log('value,from,to:', value,from,to)
+
+            const res = await fetch("https://libretranslate.de/translate", {
+                method: "POST",
+                body: JSON.stringify({
+                    q: value,
+                    source: from,
+                    target: to
+                }),
+                
+                headers: { "Content-Type": "application/json" }
+            });
+            let result = await res.json();
+            let resData = JSON.stringify(result.translatedText)
+            console.log('resData:', resData)
+            if(resData === undefined) {
+                // console.log("WHat");
+            return displayTranlateValue.innerHTML = '';
+
+            }
+            displayTranlateValue.innerHTML = resData;
+            console.log('result from 208:', result)
+
+        }
+        
+
+
+        let main = () => {
+            let from = translateFromLang();
+            let value = getFromValue();
+        
+            let to = translateToLang();
+                
+            getData(value,from,to);
+
+        }
+        main();
+
+
+        let bb = getFromValue();
+        console.log('bb:', bb)
+
+
+    </script>
+
+</body>
+</html>
