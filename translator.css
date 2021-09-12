@@ -34,7 +34,6 @@ header p {
   margin-bottom: 25px;
 }
 
-
 section {
   width: 99%;
   margin-top: 2%;
@@ -104,14 +103,13 @@ button:hover {
 
 /* `sm` applies to x-small devices (portrait phones, less than 576px) */
 @media only screen and (max-width: 600px) {
-  
   body,
   html {
     background: white;
   }
   h1 {
-      color: red;
-      display: none;
+    color: red;
+    display: none;
   }
   header {
     margin: auto;
@@ -124,9 +122,10 @@ button:hover {
     top: 62px;
     display: flex;
   }
-  .from, .to {
-      font-size: 15px;
-      margin-right: 5px;
+  .from,
+  .to {
+    font-size: 15px;
+    margin-right: 5px;
   }
 
   .translateTo {
@@ -157,12 +156,10 @@ button:hover {
   h1 {
     display: none;
   }
-  
 }
 
 /* `lg` applies to medium devices (tablets, less than 992px) */
 @media only screen and (min-width: 768px) {
-  
   .translateFrom {
     color: goldenrod;
     position: relative;
@@ -175,7 +172,6 @@ button:hover {
   }
 
   .translateTo {
-
     color: blueviolet;
     position: relative;
     bottom: 0px;
@@ -223,7 +219,6 @@ button:hover {
   }
 
   .translateTo {
-
     color: blueviolet;
     position: relative;
     bottom: 0px;
@@ -260,40 +255,39 @@ button:hover {
     display: none;
   }
   .translateFrom {
-      position: relative;
-      left: -15%;
-      bottom: 50px;
-      font-size: 20px
+    position: relative;
+    left: -15%;
+    bottom: 50px;
+    font-size: 20px;
   }
   .translateTo {
     margin-block: -27px;
     display: flex;
     align-items: center;
-
-
+    margin-left: 6.5%;
   }
-  .to, .from {
-      margin-right: 10px;
-      font-size: 20px;
-      width: auto;
-      margin-bottom: inherit;
-      
+  .to,
+  .from {
+    margin-right: 10px;
+    font-size: 20px;
+    width: auto;
+    margin-bottom: inherit;
   }
-  
+
   .swap {
-      padding-left: 10px;
-      margin-bottom: 20px;
+    padding-left: 10px;
+    margin-bottom: 20px;
   }
   article {
     position: relative;
     bottom: 150px;
-}
-.translateToLang {
+  }
+  .translateToLang {
     position: relative;
-    top: 13px
-}
-button {
+    top: 13px;
+  }
+  button {
     position: relative;
     bottom: 25px;
-}
+  }
 }
