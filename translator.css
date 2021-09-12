@@ -265,6 +265,26 @@ button:hover {
 @media (min-width: 1200px) {
   h1 {
     /* color: olivedrab; */
-    /* display: none; */
+    display: none;
   }
+  .translateFrom {
+      position: relative;
+      left: -15%;
+      top: 65px;
+      font-size: 20px
+  }
+  .translateTo {
+    margin-block: -27px;
+    display: flex;
+    align-items: center;
+
+  }
+  .to {
+      margin-right: 10px;
+      font-size: 20px
+  }
+  .swap {
+      padding-left: 20px
+  }
+
 }
