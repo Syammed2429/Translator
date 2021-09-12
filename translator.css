@@ -167,14 +167,67 @@ button:hover {
 
 /* `lg` applies to medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
-    h1 {
-        color: red;
-        /* display: none; */
+    * {
+        /* border : 1px solid red; */
     }
+    h1 {
+        /* color: red; */
+        display: none;
+    }
+    .translateFrom {
+        color: goldenrod;
+        position: relative;
+        left: -18%;
+        margin-top: 12%;
+        top: 62px;
+        font-size: large;
+    }
+      
+      .translateTo {
+        /* border : 1px solid red; */
+        
+        color: blueviolet;
+          position: relative;
+          bottom: 0px;
+          left: 58%;
+          display: flex;
+          width: 180px;
+           font-size: large;
+
+    
+      }
+      .to {
+          margin-right: 10px;
+          width: 90px;
+
+      }
+      button {
+          margin-top: 4%;
+          padding: 9px 5.2%;
+      }
+      
+      .translateToLang,
+      .translateFromLang {
+        width: 59px;
+      }
+      .text {
+          margin-top: 3%;
+          margin-right: 20px;
+          
+      }
+      textarea { 
+        font-size: 22px;
+
+      }
+      
 }
+
 
 /* `xl` applies to large devices (desktops, less than 1200px) */
 @media (max-width: 1199.98px) {
+    h1 {
+        color: red
+    }
 }
 
 /* `xxl` applies to x-large devices (large desktops, less than 1400px) */
