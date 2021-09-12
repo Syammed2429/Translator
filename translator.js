@@ -26,19 +26,15 @@ let translateToLang = () => {
 //creating a function to take the value from the Translate To options and passing it to the getData function
 let toLang = () => {
     let translateToLang = document.querySelector('.translateToLang').value;
-    console.log('translateToLang:', translateToLang)
 
 }
 
-//Adding the event to select the options from the Translate To
-// translateToLang.addEventListener('change', toLang)
 
  
 
 
 //Function to fetch the data and translate the input value
 let getData = async (value,from,to) => {
-console.log('value,from,to:', value,from,to)
 
     const res = await fetch("https://libretranslate.de/translate", {
         method: "POST",
@@ -52,14 +48,11 @@ console.log('value,from,to:', value,from,to)
     });
     let result = await res.json();
     let resData = JSON.stringify(result.translatedText)
-    console.log('resData:', resData)
     if(resData === undefined) {
-        // console.log("WHat");
-    return displayTranlateValue.innerHTML = '';
+        return displayTranlateValue.innerHTML = '';
 
     }
     displayTranlateValue.innerHTML = resData;
-    console.log('result from 208:', result)
 
 }
 
