@@ -2,14 +2,14 @@ body {
   width: 98.6vw;
   height: 100%;
   transition: all;
-  background: linear-gradient(to right, #ad5389, #3c1053);
+  background: aliceblue;
 }
 header {
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
-  background: linear-gradient(to left, #355c7d, #6c5b7b, #c06c84);
+  background: rgb(71, 120, 177);
   padding: 20px 0;
   box-shadow: 3px 3px 10px;
 }
