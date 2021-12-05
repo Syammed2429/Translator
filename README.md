@@ -13,7 +13,7 @@ A web application to instantly translate words and phrases between English and o
 </p>
 
 <p align="center">
-<img src="https://github.com/kerrybli/portfolio/blob/master/src/assests/images/star-wars.png?raw=true">
+<img src="https://github.com/kerrybli/portfolio/blob/master/src/assests/images/translaot.png?raw=true">
 </p>
 
 ## Built With
